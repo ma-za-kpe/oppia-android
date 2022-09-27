@@ -211,7 +211,7 @@ class HintsAndSolutionDialogFragmentPresenter @Inject constructor(
     }
 
     binding.hintTitle.text =
-      resourceHandler.capitalizeForHumans(hintsViewModel.title.get()!!.replace("_", " "))
+      resourceHandler.capitalizeForHumans(hintsViewModel.title.get()!!)
     binding.hintsAndSolutionSummary.text =
       htmlParserFactory.create(
         resourceBucketName,
