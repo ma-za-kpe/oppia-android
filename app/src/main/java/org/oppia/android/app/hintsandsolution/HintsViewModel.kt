@@ -88,7 +88,7 @@ class HintsViewModel @Inject constructor(
 
   private fun addHintToList(hintIndex: Int, hint: Hint) {
     val hintsViewModel = HintsViewModel(resourceHandler, translationController)
-    hintsViewModel.title.set("Ht ${resourceHandler.toHumanReadableString(hintIndex + 1)}")
+    hintsViewModel.title.set("Hint ${resourceHandler.toHumanReadableString(hintIndex + 1)}")
     val hintContentHtml =
       translationController.extractString(hint.hintContent, writtenTranslationContext)
     hintsViewModel.hintsAndSolutionSummary.set(hintContentHtml)
