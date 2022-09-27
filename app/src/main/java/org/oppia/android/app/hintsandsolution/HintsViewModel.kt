@@ -38,7 +38,7 @@ class HintsViewModel @Inject constructor(
   private lateinit var writtenTranslationContext: WrittenTranslationContext
   val itemList: MutableList<HintsAndSolutionItemViewModel> = ArrayList()
 
-  /** Initializes the view model to display hints and a solution. */
+  /** Initializes the view model to display hints and a solutio. */
   fun initialize(
     helpIndex: HelpIndex,
     hintList: List<Hint>,
