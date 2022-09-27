@@ -2,6 +2,7 @@ package org.oppia.android.app.hintsandsolution
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 import org.oppia.android.R
 import org.oppia.android.app.fragment.FragmentScope
 import org.oppia.android.app.model.HelpIndex
@@ -12,7 +13,6 @@ import org.oppia.android.app.translation.AppLanguageResourceHandler
 import org.oppia.android.domain.hintsandsolution.isHintRevealed
 import org.oppia.android.domain.hintsandsolution.isSolutionRevealed
 import org.oppia.android.domain.translation.TranslationController
-import javax.inject.Inject
 
 private const val DEFAULT_HINT_AND_SOLUTION_SUMMARY = ""
 
@@ -88,7 +88,7 @@ class HintsViewModel @Inject constructor(
 
   private fun addHintToList(hintIndex: Int, hint: Hint) {
     val hintsViewModel = HintsViewModel(resourceHandler, translationController)
-    hintsViewModel.title.set(hint.hintContent.contentId)
+    hintsViewModel.title.set("Hint ${resourceHandler.toHumanReadableString(hintIndex + 1)}")
     val hintContentHtml =
       translationController.extractString(hint.hintContent, writtenTranslationContext)
     hintsViewModel.hintsAndSolutionSummary.set(hintContentHtml)

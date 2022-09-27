@@ -4,10 +4,10 @@ import androidx.annotation.ArrayRes
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
+import javax.inject.Inject
 import org.oppia.android.app.model.AudioLanguage
 import org.oppia.android.util.locale.OppiaLocale
-import java.util.Locale
-import javax.inject.Inject
 
 /**
  * Convenience resource handler for formatting user-readable strings, and retrieving/formatting
@@ -122,6 +122,10 @@ class AppLanguageResourceHandler @Inject constructor(
 
   /** See [OppiaLocale.DisplayLocale.formatDouble] for specific behavior. */
   fun formatDouble(value: Double): String = getDisplayLocale().formatDouble(value)
+
+  /** See [OppiaLocale.DisplayLocale.toHumanReadableString] for specific behavior. */
+  fun toHumanReadableString(number: Int): String =
+    getDisplayLocale().toHumanReadableString(number).toString()
 
   /** See [OppiaLocale.DisplayLocale.computeDateString]. */
   fun computeDateString(timestampMillis: Long): String =
